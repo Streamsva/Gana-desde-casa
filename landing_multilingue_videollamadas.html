@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gana Desde Casa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f9fafb, #dbeafe);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    input, select, button {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #3b82f6;
+      color: white;
+      cursor: pointer;
+    }
+    .lang-select {
+      margin-bottom: 1rem;
+    }
+    .telegram-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #229ED9;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-select">
+      <select id="language" onchange="changeLanguage()">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
+    </div>
+    <h1 class="title" id="title">Gana desde casa</h1>
+    <p class="subtitle" id="subtitle">
+      Trabaja en línea haciendo videollamadas. ¡Gana dinero cada semana desde tu celular!
+    </p>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="number" placeholder="Edad" required>
+      <input type="text" placeholder="País" required>
+      <select required>
+        <option value="es">Idioma preferido</option>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="ru">Ruso</option>
+        <option value="vi">Vietnamita</option>
+      </select>
+      <button type="submit">Enviar datos</button>
+    </form>
+
+    <a class="telegram-button" href="https://t.me/BKstreamsva" target="_blank">Contactar por Telegram</a>
+  </div>
+
+  <script>
+    const texts = {
+      es: {
+        title: "Gana desde casa",
+        subtitle: "Trabaja en línea haciendo videollamadas. ¡Gana dinero cada semana desde tu celular!"
+      },
+      en: {
+        title: "Earn From Home",
+        subtitle: "Work online doing video calls. Earn money weekly from your phone!"
+      },
+      ru: {
+        title: "Зарабатывай из дома",
+        subtitle: "Работай онлайн через видеозвонки. Зарабатывай каждую неделю со своего телефона!"
+      },
+      vi: {
+        title: "Kiếm tiền tại nhà",
+        subtitle: "Làm việc trực tuyến qua cuộc gọi video. Nhận tiền hàng tuần bằng điện thoại của bạn!"
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById('language').value;
+      document.getElementById('title').innerText = texts[lang].title;
+      document.getElementById('subtitle').innerText = texts[lang].subtitle;
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Gracias, tus datos han sido enviados. Te contactaremos pronto.');
+    });
+  </script>
+</body>
+</html>
